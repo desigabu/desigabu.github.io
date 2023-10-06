@@ -1,0 +1,179 @@
+body {
+    margin: 0px;
+    background-color: wi;
+}
+
+/*navegador superior*/
+.nav-sup {
+    display:flex;
+    justify-content: space-around;
+    background-color: white;
+    border-bottom:black solid 1px;
+}
+
+/*estilo botões, em 3D só que menos "feio" kkkk*/
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 10px;
+    margin: 30px;
+    
+    border-radius: 50px;
+    border: 1px solid black;
+
+    background-color: transparent;
+    cursor: pointer;
+
+    box-shadow: 1px 1px 1px;
+    transition: transform 400ms, box-shadow 400ms;
+}
+
+/*efeito de pressionar o botão*/
+.button:active {
+    transform: translate(1px, 4px);
+}
+
+/*menu dropdown*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.ct-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border:black solid 1px;
+    width: 300px;
+}
+
+.ct-dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.ct-dropdown a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .ct-dropdown {
+    display: block;
+}
+
+/*menu esquerdo*/
+.nav-lat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 1200px;
+    width: 20vw;
+    padding: 30px;
+    background-color: white;
+    border-right:black solid 1px;
+}
+
+/*estilo botões*/
+.button2 {
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 80px;
+
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button2:hover {
+    background-color: black;
+    color: white;
+}
+
+/*para ajustar o contúdo e a barra lateral*/
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+/*conteúdo da página*/
+.conteudo {
+    height: 1200px;
+    width: 80vw;
+    padding: 30px;
+    background-color: white;
+}
+
+/*estilo do título maior*/
+.estilo-fx {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 50px;
+}
+
+/*estilo dos títulos*/
+.estilo-ttl {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:xx-large;
+    margin-bottom: 60px;
+}
+
+/*estilo dos paragrafos*/
+.estilo-p {
+    text-align: justify;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 80px;
+}
+
+/*LOADING + explicações*/
+.loader {
+    /*para determinar o tamanho do componente*/
+    width: 48px;
+    height: 48px;
+
+    /*adicionei para criar um espaço do texto*/
+    margin-top: 45px;
+
+    /*para que o formato seja arredondado, também determinado a expessura e etc*/
+    border: 5px solid black;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+
+    /*aqui dá start a animação, determinando também que ela será infinita*/
+    animation: rotation 1s linear infinite;
+}
+
+/*as keyframes vão determinar como será a rotação nesse "periodo" infinito*/
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*responsividade*/
+@media screen and (max-width:600px) {
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nav-lat {
+        flex-direction: row;
+        width: 100vw;
+        height:100px;
+        border-bottom: 1px solid black;
+    }
+
+}
